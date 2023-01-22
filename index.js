@@ -8,6 +8,8 @@ const ExpressValidator = require('express-validator');
 //* Import Routes 
 const authRoutes = require('./routers/auth');
 const userRoutes = require('./routers/users');
+const categoryRoutes = require('./routers/categories');
+const productRoutes = require('./routers/products');
 
 
 
@@ -33,6 +35,8 @@ app.use(ExpressValidator());
 //! Routes Middelwares
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
+app.use('/api/category', categoryRoutes);
+app.use('/api/product', productRoutes);
 
 
 const port = process.env.PORT||3000;
